@@ -1,0 +1,19 @@
+{
+    "hash": "08b3da08e0b6097691dee301597a8ffc",
+    "packages": [
+        {
+            "package": "wdalmut/simple-mvc",
+            "version": "dev-master",
+            "source-reference": "2facba1b1d53d691e031c44129d7f6d7d887172e",
+            "commit-date": "1341335941"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": [
+
+    ]
+}
