@@ -5,3 +5,6 @@ demos/
 extras/documentation
 composer.phar
 vendor
+.project
+.settings
+.buildpath
