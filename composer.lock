@@ -1,11 +1,50 @@
 {
-    "hash": "08b3da08e0b6097691dee301597a8ffc",
+    "hash": "aa1181718c29ad280ff69d3a2777cd9e",
     "packages": [
         {
-            "package": "wdalmut/simple-mvc",
+            "name": "wdalmut/simple-mvc",
             "version": "dev-master",
-            "source-reference": "2facba1b1d53d691e031c44129d7f6d7d887172e",
-            "commit-date": "1341335941"
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wdalmut/simple-mvc.git",
+                "reference": "0.1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wdalmut/simple-mvc/zipball/0.1.5",
+                "reference": "0.1.5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/",
+                    "exts/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Walter Dal Mut",
+                    "email": "walter.dalmut@gmail.com",
+                    "homepage": "http://walterdalmut.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple and full stack Push & Pull MVC framework.",
+            "keywords": [
+                "framework",
+                "micro",
+                "microframework",
+                "mvc"
+            ],
+            "time": "2012-12-16 17:38:44"
         }
     ],
     "packages-dev": null,
