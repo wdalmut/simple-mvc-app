@@ -22,3 +22,12 @@ web_app app_name do
   template "#{app_name}.conf.erb" 
   log_dir node['apache']['log_dir'] 
 end
+
+database = "blogdb"
+execute "mysql-install-database" do
+  command "\"#{node['mysql']['mysql_bin']}\" -u root #{node['mysql']['server_root_password'].empty? ? '' : '-p' }\"#{node['mysql']['server_root_password']}\" < \"/vagrant/resources/database.sql\""
+end
+cron "mysql-dump-database" do
+  minute "30"
+  command "mysqldump -u root #{node['mysql']['server_root_password'].empty? ? '' : '-p' }\"#{node['mysql']['server_root_password']}\" --databases #{database} > \"/vagrant/resources/database-dump.sql\""
+end
