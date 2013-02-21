@@ -3,7 +3,8 @@ class IndexController extends Controller
 {
     public function indexAction()
     {
-        $this->view->helloText = "Hello World";
+        $post = $this->getResource("entityManager")->find("Wdm\Model\Post", 1);
+        $this->view->helloText = $post->getTitle();
     }
 }
 

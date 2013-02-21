@@ -3,7 +3,8 @@
     "description": "The \"simple-mvc\" standard app distribution",
     "require": {
         "php": ">=5.3.3",
-        "wdalmut/simple-mvc": "master"
+        "wdalmut/simple-mvc": "master",
+        "doctrine/orm": "2.3.*"
     },
     "minimum-stability": "dev"
 }
