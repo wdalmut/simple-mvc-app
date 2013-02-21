@@ -13,5 +13,7 @@ $ php composer.phar create-project wdalmut/simple-mvc-app my-simple-mvc-project
 In order to use Vagrant to run this app simple do
 
 ```
+$ git submodule init
+$ git submodule update
 $ vagrant up
 ```
