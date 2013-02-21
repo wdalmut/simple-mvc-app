@@ -6,6 +6,16 @@ define ("APPLICATION_ENV", 'development');
 $app = new Application();
 $app->setControllerPath(__DIR__ . '/../app/controllers');
 
+$classLoader = new \Doctrine\Common\ClassLoader('Wdm', __DIR__ . '/../app/models');
+$classLoader->register();
+
+$app->bootstrap("config", function() {
+    $config = new Config();
+    $config->load(__DIR__ . '/../app/configs/application.ini');
+    
+    return $config;
+});
+
 $app->bootstrap("view", function(){
     $view = new View();
     $view->setViewPath(__DIR__ . '/../app/views');
@@ -20,11 +30,9 @@ $app->bootstrap("layout", function(){
     return $layout;
 });
 
-$app->bootstrap("entityManager", function(){
-    $classLoader = new \Doctrine\Common\ClassLoader('Wdm', __DIR__ . '/../app/models');
-    $classLoader->register();
+$app->bootstrap("entityManager", function() use ($app) {
     
-    $config = new Doctrine\ORM\Configuration(); // (2)
+    $config = new \Doctrine\ORM\Configuration(); // (2)
     
     // Proxy Configuration
     $config->setProxyDir(__DIR__ . '/../app/models/Wdm/Proxies');
@@ -35,14 +43,10 @@ $app->bootstrap("entityManager", function(){
     $driverImpl = $config->newDefaultAnnotationDriver(__DIR__);
     $config->setMetadataDriverImpl($driverImpl);
     
-    $conn = array(
-        'driver' => 'pdo_mysql',
-        'host'     => '127.0.0.1',
-        'dbname'   => 'blogdb',
-        'user'     => 'root',
-        'password' => 'root'
+    $entityManager = \Doctrine\ORM\EntityManager::create(
+        $app->getBootstrap()->getResource("config")->database()->toArray(), 
+        $config
     );
-    $entityManager = \Doctrine\ORM\EntityManager::create($conn, $config);
     return $entityManager;
 });
 
