@@ -20,3 +20,7 @@ $ git submodule update
 
 $ vagrant up
 ```
+
+When the VM is running you can go to your browser and type: `http://localhost:8080/`. 
+A simple `This is the first title` sentence should appear on your screen, if it appears
+it means that Vagrant has configured the environment well (apache2/php5/mysql).
