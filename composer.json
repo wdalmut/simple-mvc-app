@@ -6,11 +6,7 @@
             "type": "package",
             "package": {
                 "name": "wdalmut/simplini",
-                "version": "0.1.0",
-                "dist": {
-                    "url": "https://github.com/wdalmut/simplini/archive/master.zip",
-                    "type": "zip"
-                },
+                "version": "dev-master",
                 "source": {
                     "url": "https://github.com/wdalmut/simplini.git",
                     "type": "git",
@@ -26,6 +22,6 @@
         "php": ">=5.3.3",
         "wdalmut/simple-mvc": "0.1.*",
         "doctrine/orm": "2.3.*",
-        "wdalmut/simplini": "0.1.0"    
+        "wdalmut/simplini": "dev-master"    
     }
 }
